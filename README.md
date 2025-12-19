@@ -126,6 +126,8 @@ If you encounter issues while running the script, ensure that:
  - Your terminal supports ANSI escape sequences
  - If Nmap is not in PATH, use the -NmapPath parameter
 
+<br>
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
