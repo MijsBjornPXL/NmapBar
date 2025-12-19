@@ -172,6 +172,7 @@ function New-BarLine {
   } else {
     $eq = "=" * ($filled - 1)
     $sp = " " * ($BarWidth - $filled)
+    # KLEUR over volledige groeiende pijl: "=====>"
     $bar = $colorOn + $eq + ">" + $colorOff + $sp
   }
 
@@ -227,7 +228,7 @@ switch ($Mode) {
   "complete" {
     $outFile = "completescan$cleanTargetForFile.txt"
     $args    = @(
-      "-v","--stats-every","500ms",
+      "-v","--stats-every","250ms",
       "-sS","-A","-p-","-n","-T4",
       "-oN",$outFile,
       $Target
@@ -253,8 +254,13 @@ $serviceLineShown = $false
 # ---------------- Start process ----------------
 $resolvedNmap = Resolve-NmapPath -NmapPath $NmapPath
 
+# Output file: altijd absoluut pad in script/working dir
+$workDir = (Get-Location).Path
+$outFileFull = Join-Path $workDir $outFile
+
 $psi = New-Object System.Diagnostics.ProcessStartInfo
 $psi.FileName = $resolvedNmap
+$psi.WorkingDirectory = $workDir   # <<< FIX: zorgt dat -oN in deze map wordt aangemaakt
 $psi.Arguments = ($args | ForEach-Object {
   if ($_ -match '\s') { '"' + ($_ -replace '"','\"') + '"' } else { $_ }
 }) -join ' '
@@ -269,6 +275,7 @@ $p.StartInfo = $psi
 try {
   Write-Host "[!] Starting Nmap Scan`t[$Target]" -ForegroundColor Cyan
   Write-Host "Using nmap: $resolvedNmap" -ForegroundColor DarkGray
+  Write-Host "WorkingDirectory: $workDir" -ForegroundColor DarkGray
   Write-Host "Args: $($psi.Arguments)" -ForegroundColor DarkGray
 
   [void]$p.Start()
@@ -279,7 +286,7 @@ try {
   while (-not $p.HasExited) {
 
     # Snellere UI polling
-    if ($outTask.Wait(250)) {
+    if ($outTask.Wait(120)) {
       $line = $outTask.Result
       $outTask = $p.StandardOutput.ReadLineAsync()
 
@@ -333,8 +340,8 @@ try {
   Write-Host ""
 
   # ---- Toon nu pas de echte nmap output uit -oN bestand ----
-  if (Test-Path $outFile) {
-    Get-Content -Path $outFile | ForEach-Object {
+  if (Test-Path $outFileFull) {
+    Get-Content -Path $outFileFull | ForEach-Object {
       $l = $_
       if ($l -match '^\d+\/tcp\s+open\b') {
         Write-Host $l -ForegroundColor Green
@@ -347,9 +354,9 @@ try {
       }
     }
     Write-Host ""
-    Write-Host "Saved results to: $outFile" -ForegroundColor Cyan
+    Write-Host "Saved results to: $outFileFull" -ForegroundColor Cyan
   } else {
-    Write-Host "Scan finished, but output file not found: $outFile" -ForegroundColor Yellow
+    Write-Host "Scan finished, but output file not found: $outFileFull" -ForegroundColor Yellow
   }
 
   exit 0

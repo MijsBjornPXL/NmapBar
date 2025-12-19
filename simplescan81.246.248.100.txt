@@ -1,0 +1,139 @@
+# Nmap 7.80 scan initiated Fri Dec 19 16:40:39 2025 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -v --stats-every 250ms -sV -sC -n -oN simplescan81.246.248.100.txt 81.246.248.100
+Nmap scan report for 81.246.248.100
+Host is up (0.0082s latency).
+Not shown: 992 closed ports
+PORT     STATE    SERVICE         VERSION
+21/tcp   open     ftp             vsftpd 2.0.8 or later
+53/tcp   open     domain          (generic dns response: NOTIMP)
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+1723/tcp open     pptp            linux (Firmware: 1)
+8081/tcp filtered blackice-icecap
+8181/tcp open     http            CherryPy httpd unknown
+|_http-favicon: Unknown favicon MD5: 8A7752731258D656DD00D875ACE821D8
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: CherryPy/unknown
+| http-title: Tautulli - Login
+|_Requested resource was http://81.246.248.100:8181/auth/login?redirect_uri=/
+8200/tcp open     upnp            MiniDLNA 1.2.1 (Linux 4.1.27; DLNADOC 1.50; UPnP 1.0)
+9090/tcp open     ssl/zeus-admin?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 19 Dec 2025 15:40:58 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><script>window.top.location.href='/Main_Login.asp';</script>
+|     </HEAD></HTML>
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.0 501 Not Implemented
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 19 Dec 2025 15:40:58 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>501 Not Implemented</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>501 Not Implemented</H4>
+|     That method is not implemented.
+|     </BODY></HTML>
+|   Help: 
+|     HTTP/1.0 400 Bad Request
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 19 Dec 2025 15:41:13 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>400 Bad Request</H4>
+|     Can't parse request.
+|     </BODY></HTML>
+|   SMBProgNeg: 
+|     HTTP/1.0 400 Bad Request
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 19 Dec 2025 15:41:18 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>400 Bad Request</H4>
+|     Can't parse request.
+|_    </BODY></HTML>
+| ssl-cert: Subject: commonName=bjornmijs.asuscomm.com
+| Subject Alternative Name: DNS:bjornmijs.asuscomm.com
+| Issuer: commonName=R13/organizationName=Let's Encrypt/countryName=US
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-11-28T10:12:54
+| Not valid after:  2026-02-26T10:12:53
+| MD5:   d714 e72b 1de6 527a ea19 75d1 738e 8514
+|_SHA-1: bfff b631 dd43 6b7b e0e4 46df a5ff 494b f22b f045
+9091/tcp open     ssl/http        lighttpd 1.4.39
+|_http-favicon: Unknown favicon MD5: 5E4FCC77C49E69B4F55AED91C05256F3
+| http-methods: 
+|_  Supported Methods: HEAD POST OPTIONS
+|_http-server-header: lighttpd/1.4.39
+| ssl-cert: Subject: commonName=bjornmijs.asuscomm.com
+| Subject Alternative Name: DNS:bjornmijs.asuscomm.com
+| Issuer: commonName=R13/organizationName=Let's Encrypt/countryName=US
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-11-28T10:12:54
+| Not valid after:  2026-02-26T10:12:53
+| MD5:   d714 e72b 1de6 527a ea19 75d1 738e 8514
+|_SHA-1: bfff b631 dd43 6b7b e0e4 46df a5ff 494b f22b f045
+|_ssl-date: TLS randomness does not represent time
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53-TCP:V=7.80%I=7%D=12/19%Time=69457206%P=i686-pc-windows-windows%r
+SF:(DNSVersionBindReqTCP,20,"\0\x1e\0\x06\x81\x84\0\x01\0\0\0\0\0\0\x07ver
+SF:sion\x04bind\0\0\x10\0\x03")%r(DNSStatusRequestTCP,E,"\0\x0c\0\0\x90\x0
+SF:4\0\0\0\0\0\0\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9090-TCP:V=7.80%T=SSL%I=7%D=12/19%Time=69457209%P=i686-pc-windows-w
+SF:indows%r(GetRequest,10D,"HTTP/1\.0\x20200\x20OK\r\nServer:\x20httpd/2\.
+SF:0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=
+SF:block\r\nDate:\x20Fri,\x2019\x20Dec\x202025\x2015:40:58\x20GMT\r\nConte
+SF:nt-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n<HTML><HEAD><scrip
+SF:t>window\.top\.location\.href='/Main_Login\.asp';</script>\n</HEAD></HT
+SF:ML>\n")%r(HTTPOptions,15C,"HTTP/1\.0\x20501\x20Not\x20Implemented\r\nSe
+SF:rver:\x20httpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protecti
+SF:on:\x201;\x20mode=block\r\nDate:\x20Fri,\x2019\x20Dec\x202025\x2015:40:
+SF:58\x20GMT\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n
+SF:<HTML><HEAD><TITLE>501\x20Not\x20Implemented</TITLE></HEAD>\n<BODY\x20B
+SF:GCOLOR=\"#cc9999\"><H4>501\x20Not\x20Implemented</H4>\nThat\x20method\x
+SF:20is\x20not\x20implemented\.\n</BODY></HTML>\n")%r(RTSPRequest,15C,"HTT
+SF:P/1\.0\x20501\x20Not\x20Implemented\r\nServer:\x20httpd/2\.0\r\nx-frame
+SF:-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=block\r\nDat
+SF:e:\x20Fri,\x2019\x20Dec\x202025\x2015:40:58\x20GMT\r\nContent-Type:\x20
+SF:text/html\r\nConnection:\x20close\r\n\r\n<HTML><HEAD><TITLE>501\x20Not\
+SF:x20Implemented</TITLE></HEAD>\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>501\x20
+SF:Not\x20Implemented</H4>\nThat\x20method\x20is\x20not\x20implemented\.\n
+SF:</BODY></HTML>\n")%r(Help,145,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nSe
+SF:rver:\x20httpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protecti
+SF:on:\x201;\x20mode=block\r\nDate:\x20Fri,\x2019\x20Dec\x202025\x2015:41:
+SF:13\x20GMT\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n
+SF:<HTML><HEAD><TITLE>400\x20Bad\x20Request</TITLE></HEAD>\n<BODY\x20BGCOL
+SF:OR=\"#cc9999\"><H4>400\x20Bad\x20Request</H4>\nCan't\x20parse\x20reques
+SF:t\.\n</BODY></HTML>\n")%r(SMBProgNeg,145,"HTTP/1\.0\x20400\x20Bad\x20Re
+SF:quest\r\nServer:\x20httpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-x
+SF:ss-protection:\x201;\x20mode=block\r\nDate:\x20Fri,\x2019\x20Dec\x20202
+SF:5\x2015:41:18\x20GMT\r\nContent-Type:\x20text/html\r\nConnection:\x20cl
+SF:ose\r\n\r\n<HTML><HEAD><TITLE>400\x20Bad\x20Request</TITLE></HEAD>\n<BO
+SF:DY\x20BGCOLOR=\"#cc9999\"><H4>400\x20Bad\x20Request</H4>\nCan't\x20pars
+SF:e\x20request\.\n</BODY></HTML>\n");
+Service Info: Hosts: Welcome, local; OS: Linux; CPE: cpe:/o:linux:linux_kernel:4.1.2
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Dec 19 16:42:39 2025 -- 1 IP address (1 host up) scanned in 120.09 seconds
