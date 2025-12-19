@@ -1,4 +1,5 @@
 <br>
+
 # NmapBar – Interactive Nmap Progress UI for PowerShell
 
 ### Real-time ASCII / ANSI Progress Interface for Nmap
