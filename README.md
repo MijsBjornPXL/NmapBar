@@ -1,65 +1,80 @@
-# 🧭 NmapBar – Interactive Nmap Progress UI for PowerShell
+🧭 NmapBar – Interactive Nmap Progress UI for PowerShell
+Real-time ASCII / ANSI progress interface for Nmap scans
 
-### Real-time ASCII / ANSI progress interface for Nmap scans
-
-**NmapBar** is a PowerShell wrapper around **Nmap** that provides a clean, real-time console UI with progress bars, smooth color gradients, and a countdown timer (ETA).
+NmapBar is a PowerShell wrapper around Nmap that provides a clean, real-time console UI with progress bars, smooth color gradients, and a countdown timer (ETA).
 
 It enhances the standard Nmap experience by visualizing scan progress while keeping the full Nmap output intact and readable once the scan finishes.
 
 <br>
+Features
 
-## Features
+Live ASCII progress bars:
 
-- Live ASCII progress bars:
-  - Main Progress (average)
-  - SYN Scan
-  - Service Scan
-  - NSE Scan
-- Smooth color gradient on the growing arrow (`=====>`)
-  - 0% → red
-  - intermediate → orange / yellow
-  - 100% → green
-- Countdown timer (ETA)
-  - Monotonically decreasing (never counts up)
-- Fast UI updates
-  - Uses `--stats-every 250ms`
-  - UI keep-alive refresh
-- Stable, drift-free rendering
-  - Absolute cursor positioning
-- Clean final output
-  - Full Nmap results shown only after scan completion
-  - Open ports highlighted
+Main Progress (average)
 
-<br>
+SYN Scan
 
-## Preview
+Service Scan
 
-Main Progress [=========================> ] 53% Running. 53%, 2m14s
-SYN Scan [===============================> ] 82%
-Service Scan [===============> ] 41%
-NSE Scan [> ] 2%
+NSE Scan
 
+Smooth color gradient on the growing arrow (=====>)
 
-The `=====>` arrow gradually changes color from red to green as progress increases.
+0% → red
 
-<br>
+intermediate → orange / yellow
 
-## Requirements
+100% → green
 
-- PowerShell 7+ (recommended)
-- Nmap installed  
-  https://nmap.org/download.html
-- ANSI-compatible terminal
-  - Windows Terminal (recommended)
-  - VS Code terminal
+Countdown timer (ETA)
+
+Monotonically decreasing (never counts up)
+
+Fast UI updates
+
+Uses --stats-every 250ms
+
+UI keep-alive refresh
+
+Stable, drift-free rendering
+
+Absolute cursor positioning
+
+Clean final output
+
+Full Nmap results shown only after scan completion
+
+Open ports highlighted
 
 <br>
+Preview
+Main Progress [=========================>            ]  53%  Running. 53%, 2m14s
+SYN Scan      [===============================>     ]  82%
+Service Scan  [===============>                     ]  41%
+NSE Scan      [>                                    ]   2%
 
-## Installation
 
-powershell
+The =====> arrow gradually changes color from red to green as progress increases.
+
+<br>
+Requirements
+
+PowerShell 7+ (recommended)
+
+Nmap installed
+https://nmap.org/download.html
+
+ANSI-compatible terminal
+
+Windows Terminal (recommended)
+
+VS Code terminal
+
+<br>
+Installation
 git clone https://github.com/<your-username>/nmapbar.git
 cd nmapbar
+
 <br>
 Usage
 Simple scan
@@ -169,3 +184,4 @@ Author
 
 Bjorn Mijs
 IT / Network / Security
+PowerShell • Linux • Networking • Automation
