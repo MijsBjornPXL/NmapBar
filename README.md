@@ -3,7 +3,6 @@
 ### Real-time ASCII / ANSI Progress Interface for Nmap
 
 Visualize Nmap scans with live progress bars, smooth color gradients, and a countdown timer.
-
 Simple, fast, hassle-free! (No API-keys required!)
 
 This PowerShell script wraps Nmap and provides a clean, real-time console UI while a scan is running. It parses Nmap timing output, displays multiple progress bars (Main / SYN / Service / NSE), and shows the full Nmap results only after the scan completes.
@@ -32,7 +31,7 @@ This PowerShell script wraps Nmap and provides a clean, real-time console UI whi
 <br>
 
 - PowerShell: Make sure PowerShell 7+ is installed.
-<br>
+
 <br>
 
 ## Installation Instructions
@@ -44,6 +43,8 @@ git clone https://github.com/MijsBjornPXL/nmapbar.git
 cd nmapbar
 ```
 
+<br>
+
 ## Run the script:
 
 After installing the requirements, you can run the script directly from PowerShell.
@@ -51,19 +52,19 @@ After installing the requirements, you can run the script directly from PowerShe
 **_Example Simple Scan:_**
 
 ```powershell
-.\nmapbar.ps1 -Mode simple -Target 192.168.1.1
+.\nmapbar.ps1 -Mode simple 192.168.1.1
 ```
 
 **_Example Complete Scan:_**
 
 ```powershell
-.\nmapbar.ps1 -Mode complete -Target 10.0.14.5
+.\nmapbar.ps1 -Mode complete 10.0.14.5
 ```
 
 **_Custom Nmap Path:_**
 
 ```powershell
-.\nmapbar.ps1 -Mode simple -Target 192.168.1.1 `
+.\nmapbar.ps1 -Mode simple 192.168.1.1 `
   -NmapPath "C:\Program Files (x86)\Nmap\nmap.exe"
 ```
 
@@ -115,8 +116,6 @@ PORT     STATE SERVICE
 ```
 
 <br>
-
-
 
 ## Troubleshooting
 
