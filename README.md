@@ -1,187 +1,134 @@
-🧭 NmapBar – Interactive Nmap Progress UI for PowerShell
-Real-time ASCII / ANSI progress interface for Nmap scans
+# NmapBar – Interactive Nmap Progress UI for PowerShell
 
-NmapBar is a PowerShell wrapper around Nmap that provides a clean, real-time console UI with progress bars, smooth color gradients, and a countdown timer (ETA).
+### Real-time ASCII / ANSI Progress Interface for Nmap
 
-It enhances the standard Nmap experience by visualizing scan progress while keeping the full Nmap output intact and readable once the scan finishes.
+Visualize Nmap scans with live progress bars, smooth color gradients, and a countdown timer.
+
+Simple, fast, hassle-free! (No API-keys required!)
+
+This PowerShell script wraps Nmap and provides a clean, real-time console UI while a scan is running. It parses Nmap timing output, displays multiple progress bars (Main / SYN / Service / NSE), and shows the full Nmap results only after the scan completes.
+<br>
+
+## Features
+
+- Displays live ASCII progress bars:
+- Smooth color gradient on the growing arrow (=====>)
+- Countdown timer (ETA)
+- Stable, flicker-free rendering
+- Clean final output
+
+
+## Requirements
+
+- PowerShell 7.x (recommended)
+- Nmap installed
+- ANSI-compatible terminal (for colors and cursor control)
+
+
+## Dependencies
+
+- Nmap: Network scanning engine
 
 <br>
-Features
 
-Live ASCII progress bars:
+- PowerShell: Make sure PowerShell 7+ is installed.
+<br>
+<br>
 
-Main Progress (average)
+## Installation Instructions
 
-SYN Scan
+Clone the repository or download the script:
 
-Service Scan
+```bash
+git clone https://github.com/MijsBjornPXL/nmapbar.git
+cd nmapbar
+```
 
-NSE Scan
+## Run the script:
 
-Smooth color gradient on the growing arrow (=====>)
+After installing the requirements, you can run the script directly from PowerShell.
 
-0% → red
+**_Example Simple Scan:_**
 
-intermediate → orange / yellow
+```powershell
+.\nmapbar.ps1 -Mode simple -Target 192.168.1.1
+```
 
-100% → green
+**_Example Complete Scan:_**
 
-Countdown timer (ETA)
+```powershell
+.\nmapbar.ps1 -Mode complete -Target 10.0.14.5
+```
 
-Monotonically decreasing (never counts up)
+**_Custom Nmap Path:_**
 
-Fast UI updates
+```powershell
+.\nmapbar.ps1 -Mode simple -Target 192.168.1.1 `
+  -NmapPath "C:\Program Files (x86)\Nmap\nmap.exe"
+```
 
-Uses --stats-every 250ms
+### Scan Modes
 
-UI keep-alive refresh
+The script supports two scan modes:
 
-Stable, drift-free rendering
+simple
 
-Absolute cursor positioning
+Uses: -sV -sC -n
 
-Clean final output
+Balanced scan suitable for most situations
 
-Full Nmap results shown only after scan completion
+complete
 
-Open ports highlighted
+Uses: -sS -A -p- -n -T4
+
+More extensive and slower scan
+
+**_Both modes include:_**
+
+```css
+--stats-every 250ms
+```
 
 <br>
-Preview
+
+## Example Output
+
+Live Progress UI:
+
+```plaintext
 Main Progress [=========================>            ]  53%  Running. 53%, 2m14s
 SYN Scan      [===============================>     ]  82%
 Service Scan  [===============>                     ]  41%
 NSE Scan      [>                                    ]   2%
-
+```
 
 The =====> arrow gradually changes color from red to green as progress increases.
+<br>
+
+Final Nmap Output:
+
+```plaintext
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+```
 
 <br>
-Requirements
-
-PowerShell 7+ (recommended)
-
-Nmap installed
-https://nmap.org/download.html
-
-ANSI-compatible terminal
-
-Windows Terminal (recommended)
-
-VS Code terminal
-
-<br>
-Installation
-git clone https://github.com/<your-username>/nmapbar.git
-cd nmapbar
-
-<br>
-Usage
-Simple scan
-
-Balanced scan suitable for most situations.
-
-.\nmapbar.ps1 -Mode simple -Target 192.168.1.1
-
-Complete scan
-
-More extensive and slower scan.
-
-.\nmapbar.ps1 -Mode complete -Target 10.0.14.5
-
-Custom Nmap path
-
-If Nmap is not in your PATH.
-
-.\nmapbar.ps1 -Mode simple -Target 192.168.1.1 `
-  -NmapPath "C:\Program Files (x86)\Nmap\nmap.exe"
-
-<br>
-Scan Modes
-simple
-
-Uses the following Nmap flags:
-
--sV -sC -n
-
-complete
-
-Uses the following Nmap flags:
-
--sS -A -p- -n -T4
 
 
-Both modes include:
 
---stats-every 250ms
+## Troubleshooting
+
+If you encounter issues while running the script, ensure that:
+
+ - Nmap is installed and accessible
+ - You are using PowerShell 7 or newer
+ - Your terminal supports ANSI escape sequences
+ - If Nmap is not in PATH, use the -NmapPath parameter
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 
-for responsive progress updates.
-
-<br>
-How It Works
-
-Nmap runs as a background process with frequent status updates
-
-Output is parsed in real-time to extract progress percentages
-
-Progress is visualized using ANSI escape sequences
-
-ETA (countdown) is estimated based on:
-
-elapsed time
-
-current progress rate
-
-The lowest calculated ETA is retained to ensure the timer never increases
-
-<br>
-Color & UI Design
-
-ANSI 256-color mode is used for smooth gradients
-
-Only the filled portion of the bar (=====>) is colored to prevent layout issues
-
-Labels and percentages use subtle, readable colors
-
-Open ports are highlighted in green in the final output
-
-<br>
-Limitations
-
-ETA is an estimate and depends on Nmap output frequency
-
-Requires a terminal with ANSI support
-
-Very quiet scans (e.g. long NSE phases) may reduce ETA accuracy
-
-<br>
-Roadmap / Ideas
-
-Full gradient across the entire bar
-
-Spinner animation during idle moments
-
-JSON / XML output parsing
-
-Linux / macOS Bash version
-
-Configuration file support (YAML / JSON)
-
-<br>
-Contributing
-
-Pull requests are welcome.
-Feel free to open issues for bugs, ideas, or improvements.
-
-<br>
-License
-
-MIT License
-
-<br>
-Author
-
-Bjorn Mijs
-IT / Network / Security
-PowerShell • Linux • Networking • Automation
