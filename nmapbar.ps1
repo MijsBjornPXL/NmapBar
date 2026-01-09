@@ -273,6 +273,7 @@ $p = New-Object System.Diagnostics.Process
 $p.StartInfo = $psi
 
 try {
+  Clear-Host
   Write-Host "[!] Starting Nmap Scan`t[$Target]" -ForegroundColor Cyan
   Write-Host "Using nmap: $resolvedNmap" -ForegroundColor DarkGray
   Write-Host "WorkingDirectory: $workDir" -ForegroundColor DarkGray

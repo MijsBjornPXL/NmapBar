@@ -1,0 +1,270 @@
+# Nmap 7.80 scan initiated Fri Jan 09 08:47:11 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -v --stats-every 250ms -sV -sC -n -oN simplescan192.168.1.1.txt 192.168.1.1
+Nmap scan report for 192.168.1.1
+Host is up (0.020s latency).
+Not shown: 990 closed ports
+PORT     STATE SERVICE       VERSION
+21/tcp   open  ftp           vsftpd 2.0.8 or later
+22/tcp   open  ssh           Dropbear sshd (protocol 2.0)
+53/tcp   open  domain        (generic dns response: NOTIMP)
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+80/tcp   open  http          httpd/2.0
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:03 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>404 Not Found</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>404 Not Found</H4>
+|     File not found.
+|     </BODY></HTML>
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:42:58 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><script>window.top.location.href='/Main_Login.asp';</script>
+|     </HEAD></HTML>
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.0 501 Not Implemented
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:42:58 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>501 Not Implemented</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>501 Not Implemented</H4>
+|     That method is not implemented.
+|     </BODY></HTML>
+|   X11Probe: 
+|     HTTP/1.0 400 Bad Request
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:03 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>400 Bad Request</H4>
+|     Can't parse request.
+|_    </BODY></HTML>
+|_http-server-header: httpd/2.0
+|_http-title: Site doesn't have a title (text/html).
+139/tcp  open  netbios-ssn   Samba smbd 3.X - 4.X (workgroup: MIJS)
+445/tcp  open  netbios-ssn   Samba smbd 3.6.25 (workgroup: MIJS)
+1723/tcp open  pptp          linux (Firmware: 1)
+8200/tcp open  upnp          MiniDLNA 1.2.1 (Linux 4.1.27; DLNADOC 1.50; UPnP 1.0)
+8443/tcp open  ssl/https-alt httpd/2.0
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     HTTP/1.0 400 Bad Request
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:27 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>400 Bad Request</H4>
+|     Can't parse request.
+|     </BODY></HTML>
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:18 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>404 Not Found</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>404 Not Found</H4>
+|     File not found.
+|     </BODY></HTML>
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:17 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><script>window.top.location.href='/Main_Login.asp';</script>
+|     </HEAD></HTML>
+|   HTTPOptions: 
+|     HTTP/1.0 501 Not Implemented
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:17 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>501 Not Implemented</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>501 Not Implemented</H4>
+|     That method is not implemented.
+|     </BODY></HTML>
+|   RTSPRequest: 
+|     HTTP/1.0 501 Not Implemented
+|     Server: httpd/2.0
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 1; mode=block
+|     Date: Fri, 09 Jan 2026 07:43:18 GMT
+|     Content-Type: text/html
+|     Connection: close
+|     <HTML><HEAD><TITLE>501 Not Implemented</TITLE></HEAD>
+|     <BODY BGCOLOR="#cc9999"><H4>501 Not Implemented</H4>
+|     That method is not implemented.
+|_    </BODY></HTML>
+|_http-server-header: httpd/2.0
+|_http-title: Site doesn't have a title (text/html).
+| ssl-cert: Subject: commonName=bjornmijs.asuscomm.com
+| Subject Alternative Name: DNS:bjornmijs.asuscomm.com
+| Issuer: commonName=R13/organizationName=Let's Encrypt/countryName=US
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-11-28T10:12:54
+| Not valid after:  2026-02-26T10:12:53
+| MD5:   d714 e72b 1de6 527a ea19 75d1 738e 8514
+|_SHA-1: bfff b631 dd43 6b7b e0e4 46df a5ff 494b f22b f045
+9091/tcp open  ssl/http      lighttpd 1.4.39
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53-TCP:V=7.80%I=7%D=1/9%Time=6960B187%P=i686-pc-windows-windows%r(D
+SF:NSVersionBindReqTCP,20,"\0\x1e\0\x06\x81\x84\0\x01\0\0\0\0\0\0\x07versi
+SF:on\x04bind\0\0\x10\0\x03")%r(DNSStatusRequestTCP,E,"\0\x0c\0\0\x90\x04\
+SF:0\0\0\0\0\0\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.80%I=7%D=1/9%Time=6960B182%P=i686-pc-windows-windows%r(G
+SF:etRequest,10D,"HTTP/1\.0\x20200\x20OK\r\nServer:\x20httpd/2\.0\r\nx-fra
+SF:me-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=block\r\nD
+SF:ate:\x20Fri,\x2009\x20Jan\x202026\x2007:42:58\x20GMT\r\nContent-Type:\x
+SF:20text/html\r\nConnection:\x20close\r\n\r\n<HTML><HEAD><script>window\.
+SF:top\.location\.href='/Main_Login\.asp';</script>\n</HEAD></HTML>\n")%r(
+SF:HTTPOptions,15C,"HTTP/1\.0\x20501\x20Not\x20Implemented\r\nServer:\x20h
+SF:ttpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\
+SF:x20mode=block\r\nDate:\x20Fri,\x2009\x20Jan\x202026\x2007:42:58\x20GMT\
+SF:r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n<HTML><HEA
+SF:D><TITLE>501\x20Not\x20Implemented</TITLE></HEAD>\n<BODY\x20BGCOLOR=\"#
+SF:cc9999\"><H4>501\x20Not\x20Implemented</H4>\nThat\x20method\x20is\x20no
+SF:t\x20implemented\.\n</BODY></HTML>\n")%r(RTSPRequest,15C,"HTTP/1\.0\x20
+SF:501\x20Not\x20Implemented\r\nServer:\x20httpd/2\.0\r\nx-frame-options:\
+SF:x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=block\r\nDate:\x20Fri,
+SF:\x2009\x20Jan\x202026\x2007:42:58\x20GMT\r\nContent-Type:\x20text/html\
+SF:r\nConnection:\x20close\r\n\r\n<HTML><HEAD><TITLE>501\x20Not\x20Impleme
+SF:nted</TITLE></HEAD>\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>501\x20Not\x20Imp
+SF:lemented</H4>\nThat\x20method\x20is\x20not\x20implemented\.\n</BODY></H
+SF:TML>\n")%r(X11Probe,145,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nServer:\
+SF:x20httpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protection:\x2
+SF:01;\x20mode=block\r\nDate:\x20Fri,\x2009\x20Jan\x202026\x2007:43:03\x20
+SF:GMT\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n<HTML>
+SF:<HEAD><TITLE>400\x20Bad\x20Request</TITLE></HEAD>\n<BODY\x20BGCOLOR=\"#
+SF:cc9999\"><H4>400\x20Bad\x20Request</H4>\nCan't\x20parse\x20request\.\n<
+SF:/BODY></HTML>\n")%r(FourOhFourRequest,13A,"HTTP/1\.0\x20404\x20Not\x20F
+SF:ound\r\nServer:\x20httpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xs
+SF:s-protection:\x201;\x20mode=block\r\nDate:\x20Fri,\x2009\x20Jan\x202026
+SF:\x2007:43:03\x20GMT\r\nContent-Type:\x20text/html\r\nConnection:\x20clo
+SF:se\r\n\r\n<HTML><HEAD><TITLE>404\x20Not\x20Found</TITLE></HEAD>\n<BODY\
+SF:x20BGCOLOR=\"#cc9999\"><H4>404\x20Not\x20Found</H4>\nFile\x20not\x20fou
+SF:nd\.\n</BODY></HTML>\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8443-TCP:V=7.80%T=SSL%I=7%D=1/9%Time=6960B195%P=i686-pc-windows-win
+SF:dows%r(GetRequest,10D,"HTTP/1\.0\x20200\x20OK\r\nServer:\x20httpd/2\.0\
+SF:r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=bl
+SF:ock\r\nDate:\x20Fri,\x2009\x20Jan\x202026\x2007:43:17\x20GMT\r\nContent
+SF:-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n<HTML><HEAD><script>
+SF:window\.top\.location\.href='/Main_Login\.asp';</script>\n</HEAD></HTML
+SF:>\n")%r(HTTPOptions,15C,"HTTP/1\.0\x20501\x20Not\x20Implemented\r\nServ
+SF:er:\x20httpd/2\.0\r\nx-frame-options:\x20SAMEORIGIN\r\nx-xss-protection
+SF::\x201;\x20mode=block\r\nDate:\x20Fri,\x2009\x20Jan\x202026\x2007:43:17
+SF:\x20GMT\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\n\r\n<H
+SF:TML><HEAD><TITLE>501\x20Not\x20Implemented</TITLE></HEAD>\n<BODY\x20BGC
+SF:OLOR=\"#cc9999\"><H4>501\x20Not\x20Implemented</H4>\nThat\x20method\x20
+SF:is\x20not\x20implemented\.\n</BODY></HTML>\n")%r(FourOhFourRequest,13A,
+SF:"HTTP/1\.0\x20404\x20Not\x20Found\r\nServer:\x20httpd/2\.0\r\nx-frame-o
+SF:ptions:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=block\r\nDate:
+SF:\x20Fri,\x2009\x20Jan\x202026\x2007:43:18\x20GMT\r\nContent-Type:\x20te
+SF:xt/html\r\nConnection:\x20close\r\n\r\n<HTML><HEAD><TITLE>404\x20Not\x2
+SF:0Found</TITLE></HEAD>\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>404\x20Not\x20F
+SF:ound</H4>\nFile\x20not\x20found\.\n</BODY></HTML>\n")%r(RTSPRequest,15C
+SF:,"HTTP/1\.0\x20501\x20Not\x20Implemented\r\nServer:\x20httpd/2\.0\r\nx-
+SF:frame-options:\x20SAMEORIGIN\r\nx-xss-protection:\x201;\x20mode=block\r
+SF:\nDate:\x20Fri,\x2009\x20Jan\x202026\x2007:43:18\x20GMT\r\nContent-Type
+SF::\x20text/html\r\nConnection:\x20close\r\n\r\n<HTML><HEAD><TITLE>501\x2
+SF:0Not\x20Implemented</TITLE></HEAD>\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>50
+SF:1\x20Not\x20Implemented</H4>\nThat\x20method\x20is\x20not\x20implemente
+SF:d\.\n</BODY></HTML>\n")%r(DNSVersionBindReqTCP,145,"HTTP/1\.0\x20400\x2
+SF:0Bad\x20Request\r\nServer:\x20httpd/2\.0\r\nx-frame-options:\x20SAMEORI
+SF:GIN\r\nx-xss-protection:\x201;\x20mode=block\r\nDate:\x20Fri,\x2009\x20
+SF:Jan\x202026\x2007:43:27\x20GMT\r\nContent-Type:\x20text/html\r\nConnect
+SF:ion:\x20close\r\n\r\n<HTML><HEAD><TITLE>400\x20Bad\x20Request</TITLE></
+SF:HEAD>\n<BODY\x20BGCOLOR=\"#cc9999\"><H4>400\x20Bad\x20Request</H4>\nCan
+SF:'t\x20parse\x20request\.\n</BODY></HTML>\n");
+Service Info: Hosts: Welcome, local; OS: Linux; CPE: cpe:/o:linux:linux_kernel, cpe:/o:linux:linux_kernel:4.1.2
+
+Host script results:
+|_clock-skew: -1h00m00s
+| nbstat: NetBIOS name: GT-AC5300-C4D0, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| Names:
+|   GT-AC5300-C4D0<00>   Flags: <unique><active>
+|   GT-AC5300-C4D0<03>   Flags: <unique><active>
+|   GT-AC5300-C4D0<20>   Flags: <unique><active>
+|   MIJS<1e>             Flags: <group><active>
+|_  MIJS<00>             Flags: <group><active>
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.6.25)
+|   Computer name: GT-AC5300-C4D0
+|   NetBIOS computer name: 
+|   Domain name: asus.com
+|   FQDN: GT-AC5300-C4D0.asus.com
+|_  System time: 2026-01-09T08:44:54+01:00
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jan 09 08:54:35 2026 -- 1 IP address (1 host up) scanned in 705.79 seconds
+S<1e>             Flags: <group><active>
+|_  MIJS<00>             Flags: <group><active>
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.6.25)
+|   Computer name: GT-AC5300-C4D0
+|   NetBIOS computer name: 
+|   Domain name: asus.com
+|   FQDN: GT-AC5300-C4D0.asus.com
+|_  System time: 2026-01-09T08:49:09+01:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: Invalid timestamp: -11644473600
+|_  start_date: N/A
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jan 09 08:50:13 2026 -- 1 IP address (1 host up) scanned in 195.98 seconds
+: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: Invalid timestamp: -11644473600
+|_  start_date: N/A
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jan 09 08:50:03 2026 -- 1 IP address (1 host up) scanned in 173.06 seconds

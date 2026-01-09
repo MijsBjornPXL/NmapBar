@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Tue Jan 06 09:20:42 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -v --stats-every 250ms -sV -sC -n -oN simplescan10.176.96.1.txt 10.176.96.1
+Nmap scan report for 10.176.96.1
+Host is up (0.0050s latency).
+All 1000 scanned ports on 10.176.96.1 are filtered
+MAC Address: 00:1C:7F:81:05:0F (Check Point Software Technologies)
+
+Read data files from: C:\Program Files (x86)\Nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jan 06 09:21:10 2026 -- 1 IP address (1 host up) scanned in 28.41 seconds

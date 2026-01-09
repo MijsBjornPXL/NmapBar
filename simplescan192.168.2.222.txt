@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Fri Jan 09 08:36:23 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -v --stats-every 250ms -sV -sC -n -oN simplescan192.168.2.222.txt 192.168.2.222
+Nmap scan report for 192.168.2.222 [host down]
+Read data files from: C:\Program Files (x86)\Nmap
+# Nmap done at Fri Jan 09 08:36:33 2026 -- 1 IP address (0 hosts up) scanned in 10.41 seconds
